@@ -25,6 +25,11 @@ const sockets = (server) => {
         socket.on('type', (id,typing) => {
             socket.broadcast.to(id).emit('type', id , typing);
         });
+	    
+        socket.on('ChatStatus', (id,details) => {
+            socket.broadcast.to(id).emit('ChatStatus', id,details);        
+        });
+	    
         socket.on('error', function (err) {
             console.log('received socket error:')
             console.log(err)
