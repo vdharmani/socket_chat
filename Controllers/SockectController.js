@@ -23,6 +23,7 @@ const sockets = (server) => {
             socket.broadcast.to(id).emit('leaveChat', id);        
         });
         socket.on('type', (id,typing) => {
+		console.log(typing);
             socket.broadcast.to(id).emit('type', id , typing);
         });
 	    
