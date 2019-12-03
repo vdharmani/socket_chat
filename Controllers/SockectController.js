@@ -28,6 +28,7 @@ const sockets = (server) => {
         });
 	    
         socket.on('ChatStatus', (id,details) => {
+		console.log(details)
             socket.broadcast.to(id).emit('ChatStatus', id,details);        
         });
 	    
