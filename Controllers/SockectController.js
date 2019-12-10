@@ -32,7 +32,7 @@ const sockets = (server) => {
             socket.broadcast.to(id).emit('ChatStatus', id,details);        
         });
 	    
-        socket.on('error', function (err) {
+        socket.on('errors', function (err) {
             alert('received socket error:')
             console.log(err)
         })
