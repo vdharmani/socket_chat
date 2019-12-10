@@ -33,7 +33,7 @@ const sockets = (server) => {
         });
 	    
         socket.on('error', function (err) {
-            console.log('received socket error:')
+            alert('received socket error:')
             console.log(err)
         })
       });
