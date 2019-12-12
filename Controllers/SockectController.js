@@ -26,6 +26,10 @@ const sockets = (server) => {
 		console.log(typing);
             socket.broadcast.to(id).emit('type', id , typing);
         });
+        socket.on('typing', (id,typing) => {
+		console.log(typing);
+            socket.broadcast.to(id).emit('type', id , typing);
+        });
 	    
         socket.on('ChatStatus', (id,details) => {
 		console.log(details)
