@@ -35,7 +35,19 @@ const sockets = (server) => {
 	 
             socket.broadcast.to(id).emit('ChatStatus', id,details);        
         });
-	    
+	   
+	 socket.on('newArgueDebates', (id,message) => {
+			console.log(message);
+            socket.broadcast.to(id).emit('newArgueDebates', id , message);
+        });
+	socket.on('newArgueForums', (id,message) => {
+			console.log(message);
+            socket.broadcast.to(id).emit('newArgueForums', id , message);
+        }); 
+	socket.on('newArgueDebateChat', (id,message) => {
+			console.log(message);
+            socket.broadcast.to(id).emit('newArgueDebateChat', id , message);
+        });  
         socket.on('errors', function (err) {
             alert('received socket error:')
             console.log(err)
